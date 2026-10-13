@@ -57,6 +57,7 @@ export { visuallyHidden } from "./tokens/visuallyHidden"
 // Components
 export { Avatar } from "./components/Avatar"
 export { Badge } from "./components/Badge"
+export { LogoIcon, type LogoIconProps } from "./components/LogoIcon"
 export {
 	Button,
 	useButton,
