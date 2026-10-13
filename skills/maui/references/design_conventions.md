@@ -6,6 +6,7 @@ Patterns, demo apps, and the gallery `Panel` preview frame are not package compo
 
 ## Composition
 
+- Use Maui's `Text` component instead of raw `<span>` elements for inline text. Set typography through its `size`, `fontWeight`, `color`, `monospace`, and `tabular` props; see [Text](components/text.md). Keep semantic elements such as headings, paragraphs, labels, and links for their respective roles.
 - Hover backgrounds have no transitions. Hover fills such as `backgroundColor.elementHover`, quiet-button washes, and list or row highlights snap instantly. Do not animate `background` or `background-color` on hover with `motion.standard(...)` or a CSS `transition`. Other motion, including tooltips and transforms, is allowed.
 - Simple apps default to a prose column: `style(proseContainerStyle, { width: "100%", marginInline: "auto" })`. `sizing.contentWidth` is that same style. Use it for single-column tools, settings, forms, and reading layouts. Multi-pane or full-bleed apps such as inboxes, calendars, and IDEs are exceptions.
 - Design an intentional empty composition for every list, inbox, search result, or collection. Include copy and, when useful, an action. Do not leave a blank panel.
