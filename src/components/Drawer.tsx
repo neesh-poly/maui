@@ -24,6 +24,7 @@ import {
 } from "motion/react"
 import { background } from "../tokens/background"
 import { borderColor } from "../tokens/borders"
+import { scrimAlpha, scrimColor } from "../tokens/scrim"
 import { visuallyHidden } from "../tokens/visuallyHidden"
 import { motionDurationMs } from "../tokens/motion"
 import { cls } from "../utils/cls"
@@ -46,7 +47,6 @@ export type DrawerProps = {
 
 const PANEL_WIDTH_PX = 240
 const PANEL_MAX_VW = 85
-const SCRIM_ALPHA = 0.32
 const DISMISS_OFFSET_RATIO = 0.35
 const DISMISS_VELOCITY = 500
 const AXIS_INTENT_PX = 10
@@ -171,7 +171,7 @@ function DrawerLayer({
 	const x = useMotionValue(reduceMotion ? 0 : closedX)
 	const overlayOpacity = useMotionValue(reduceMotion ? 0 : 1)
 	const progress = useTransform(x, [closedX, 0], [0, 1])
-	const scrimBackground = useMotionTemplate`rgb(0 0 0 / calc(${SCRIM_ALPHA} * ${progress}))`
+	const scrimBackground = useMotionTemplate`rgb(0 0 0 / calc(${scrimAlpha} * ${progress}))`
 	const canDrag = isDismissable && !reduceMotion
 	const dismissOffset = panelWidth * DISMISS_OFFSET_RATIO
 
@@ -423,7 +423,7 @@ const overlayClass = style({
 })
 
 const overlayReducedScrimClass = style({
-	backgroundColor: `rgb(0 0 0 / ${SCRIM_ALPHA})`,
+	backgroundColor: scrimColor,
 })
 
 const shellClass = style({

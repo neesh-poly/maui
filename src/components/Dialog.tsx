@@ -21,6 +21,7 @@ import { background } from "../tokens/background"
 import { border } from "../tokens/borders"
 import { overlayMotion } from "../tokens/motion"
 import { radius } from "../tokens/radius"
+import { scrimColor } from "../tokens/scrim"
 import { spacing } from "../tokens/spacing"
 import { text } from "../tokens/text"
 import { cls } from "../utils/cls"
@@ -75,7 +76,7 @@ const overlayClass = style({
 	justifyContent: "center",
 	boxSizing: "border-box",
 	padding: spacing.value(8),
-	backgroundColor: "rgb(0 0 0 / 0.1)",
+	backgroundColor: scrimColor,
 	overflow: "auto",
 	overscrollBehavior: "contain",
 })
